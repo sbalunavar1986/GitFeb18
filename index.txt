@@ -1,0 +1,14 @@
+
+
+var EvenNum = require ("./lib/EvenOdd.js");
+
+EvenNum.emit.on("Started", 
+function(message) {
+    notify(message)
+   }
+)
+{
+var notify = function notification (message){
+    control.log(message);
+}
+}

@@ -1,0 +1,30 @@
+
+
+var  events = require ("events");
+var emitter = new events.emitter();
+
+
+function IsEven (number) {
+    Evencount = 10 ;
+   IsEvenF = false;
+    for (let index = 2; index < number; index++) {
+         if (index %  2== 0){
+             IsEvenF = true;
+             return IsEvenF ;
+         }        
+    }
+}
+
+function findEven(){
+    emitter.emit("Started","Execution started");
+    for (let index = 0; index < 1000; index++) {
+        if (IsEven(number) == true ){
+            emitter.emit("Found Even Number which is" + number);
+
+        }
+    }
+    emitter.emit("Completed","Completed execution");
+}
+
+module.exports.emitter = emitter ;
+module.exports.findEven = findEven ;
