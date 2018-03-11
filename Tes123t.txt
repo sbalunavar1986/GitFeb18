@@ -1,0 +1,10 @@
+function registerVehicle(string registrationNumber,string make,uint8 year,address owner) public onlyRTO {
+  //var vehhicleDetails = // create struct
+  //fill the map with struct
+  Vehicle  vehicleD = Vehicle(); 
+  vehicleD.registrationNumber = registrationNumber;
+  vehicleD.make= make;
+  vehicleD.year = year;
+
+  registrationMap[owner] = vehicleD;
+}
