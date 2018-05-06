@@ -1,0 +1,65 @@
+/**
+ * Write your model definitions here
+ */
+/*
+namespace org.qt.hyperledger.namespace.vegetable
+
+participant Consumer identified by name {
+  o String name
+  }
+
+participant Farmer extends User {
+  o String details
+  }
+
+asset Vegatable identified by assetId {
+  o String assetId
+  o String value
+  o Typeofvegetable type
+  o Integer quantity
+  o String Owner = 'Farmer' 
+  o String newOwner = 'Consumer'
+  }
+
+enum personalidentifier {
+o DrivingLicenseNumber
+o PassportNumber
+o IDnumber
+}
+
+enum Typeofvegetable {
+o Tomato
+o Potato
+}
+
+transaction Sell {
+  o Integer BuyingPrice
+  o Integer SellingPrice
+  --> Vegatable veggies
+}
+*/
+
+namespace org.qt.blockchain.hyperledger.vegetable
+
+participant Member identified by memberId {
+  o String memberId
+  o String mobileNumber
+}
+
+asset Vegetable identified by vegetableId {
+  o String vegetableId
+  o Typeofvegetable type
+  -->Member owner
+ }
+
+ enum Typeofvegetable {
+o Tomato
+o Potato
+}
+
+ transaction SellVegetable {
+   o String description
+   --> Member Seller
+   --> Member Buyer
+   --> Vegetable vegetable
+ }
